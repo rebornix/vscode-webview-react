@@ -1,13 +1,40 @@
 {
   "name": "vscode-webview-react",
   "version": "0.1.0",
-  "private": true,
+  "engines": {
+    "vscode": "^1.23.0"
+  },
+  "publisher": "rebornix",
+  "activationEvents": [
+    "onCommand:catCoding.start",
+    "onCommand:catCoding.doRefactor"
+  ],
+  "main": "./ext-src/extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "catCoding.start",
+        "title": "Start cat coding session",
+        "category": "Cat Coding"
+      },
+      {
+        "command": "catCoding.doRefactor",
+        "title": "Do some refactoring",
+        "category": "Cat Coding"
+      }
+    ]
+  },
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
-    "react-scripts-ts": "2.16.0"
+	"react-scripts-ts": "2.16.0",
+	"vscode": "^1.1.17"
   },
   "scripts": {
+	"vscode:prepublish": "tsc -p ./",
+    "compile": "tsc -p ./",
+    "watch": "tsc -w -p ./",
+    "postinstall": "node ./node_modules/vscode/bin/install",
     "start": "react-scripts-ts start",
     "build": "react-scripts-ts build",
     "test": "react-scripts-ts test --env=jsdom",
