@@ -8,12 +8,12 @@
   "activationEvents": [
     "onCommand:react-webview.start"
   ],
-  "main": "./ext-src/extension.js",
+  "main": "./build/ext-src/extension.js",
   "contributes": {
     "commands": [
       {
         "command": "react-webview.start",
-        "title": "Start react webview",
+        "title": "Start React Webview",
         "category": "React"
       }
     ]
@@ -25,20 +25,18 @@
 	"vscode": "^1.1.17"
   },
   "scripts": {
-	"vscode:prepublish": "tsc -p ./",
-    "compile": "tsc -p ./",
-    "watch": "tsc -w -p ./",
+	"vscode:prepublish": "react-scripts-ts build && tsc -p tsconfig.extension.json",
     "postinstall": "node ./node_modules/vscode/bin/install",
     "start": "react-scripts-ts start",
-    "build": "react-scripts-ts build",
+    "build": "react-scripts-ts build && tsc -p tsconfig.extension.json",
     "test": "react-scripts-ts test --env=jsdom",
     "eject": "react-scripts-ts eject"
   },
   "devDependencies": {
     "@types/jest": "^22.2.3",
-    "@types/node": "^10.1.2",
+	"@types/node": "^10.1.2",
+    "typescript": "^2.8.3",
     "@types/react": "^16.3.14",
-    "@types/react-dom": "^16.0.5",
-    "typescript": "^2.8.3"
+    "@types/react-dom": "^16.0.5"
   }
 }
