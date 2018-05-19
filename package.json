@@ -6,21 +6,15 @@
   },
   "publisher": "rebornix",
   "activationEvents": [
-    "onCommand:catCoding.start",
-    "onCommand:catCoding.doRefactor"
+    "onCommand:react-webview.start"
   ],
   "main": "./ext-src/extension.js",
   "contributes": {
     "commands": [
       {
-        "command": "catCoding.start",
-        "title": "Start cat coding session",
-        "category": "Cat Coding"
-      },
-      {
-        "command": "catCoding.doRefactor",
-        "title": "Do some refactoring",
-        "category": "Cat Coding"
+        "command": "react-webview.start",
+        "title": "Start react webview",
+        "category": "React"
       }
     ]
   },
