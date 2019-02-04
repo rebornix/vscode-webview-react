@@ -21,7 +21,11 @@
   "dependencies": {
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "terser": "3.16.0",
     "vscode": "^1.1.17"
+  },
+  "resolutions": {
+    "terser": "3.14.1"
   },
   "scripts": {
     "vscode:prepublish": "./scripts/build-non-split.js && tsc -p tsconfig.extension.json",
