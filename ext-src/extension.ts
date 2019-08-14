@@ -88,8 +88,8 @@ class ReactPanel {
 
 	private _getHtmlForWebview() {
 		const manifest = require(path.join(this._extensionPath, 'build', 'asset-manifest.json'));
-		const mainScript = manifest['main.js'];
-		const mainStyle = manifest['main.css'];
+		const mainScript = manifest.files['main.js'];
+		const mainStyle = manifest.files['main.css'];
 
 		const scriptPathOnDisk = vscode.Uri.file(path.join(this._extensionPath, 'build', mainScript));
 		const scriptUri = scriptPathOnDisk.with({ scheme: 'vscode-resource' });
