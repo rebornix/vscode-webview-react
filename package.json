@@ -2,7 +2,7 @@
   "name": "vscode-webview-react",
   "version": "0.1.0",
   "engines": {
-    "vscode": "^1.23.0"
+    "vscode": "^1.45.1"
   },
   "publisher": "rebornix",
   "activationEvents": [
@@ -19,30 +19,28 @@
     ]
   },
   "dependencies": {
-    "react": "^16.3.2",
-    "react-dom": "^16.3.2",
-    "terser": "3.16.0",
-    "vscode": "^1.1.17"
-  },
-  "resolutions": {
-    "terser": "3.14.1"
+    "@types/vscode": "^1.45.1",
+    "react": "^16.13.1",
+    "react-dom": "^16.13.1"
   },
   "scripts": {
-    "vscode:prepublish": "./scripts/build-non-split.js && tsc -p tsconfig.extension.json",
-    "postinstall": "node ./node_modules/vscode/bin/install",
+    "vscode:prepublish": "npm run compile",
     "start": "react-scripts start",
-    "build": "./scripts/build-non-split.js && tsc -p tsconfig.extension.json",
+    "build": "npm run compile",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "compile": "./scripts/build-non-split.js && tsc -p tsconfig.extension.json",
+    "pretest": "npm run compile"
   },
   "devDependencies": {
-    "@types/jest": "^23.3.13",
-    "@types/node": "^10.1.2",
+    "@types/jest": "^25.2.3",
+    "@types/node": "^14.0.11",
     "@types/react": "^16.3.14",
     "@types/react-dom": "^16.0.5",
-    "react-scripts": "^2.1.3",
-    "rewire": "^4.0.1",
-    "typescript": "^3.3.1"
+    "react-scripts": "^3.4.1",
+    "rewire": "^5.0.0",
+    "typescript": "^3.3.1",
+    "terser": "^4.7.0"
   },
   "browserslist": [
     ">0.2%",
