@@ -12,7 +12,7 @@ This project was bootstrapped with
 Run following commands in the terminal
 
 ```shell
-yarn install
+yarn install --ignore-engines
 yarn run build
 ```
 And then press F5, in Extension Development Host session, run `Start React Webview` command from command palette.
